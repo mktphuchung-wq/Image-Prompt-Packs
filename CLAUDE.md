@@ -12,7 +12,7 @@ The source of truth for scope and decisions is `specs/001-image-prompt-pack/`: `
 
 - **No code.** Content is Markdown/JSON/YAML only: no scripts, build step, runtime or dependencies.
 - **SKILL.md states goals, success criteria, the output contract and when to read each reference.** No numbered step-by-step procedures, no harness-specific tool names, no `${CLAUDE_PLUGIN_ROOT}`-style variables. Reference knowledge by relative path (`references/<file>`) so the same folder works when uploaded to ChatGPT.
-- **Output contract** (`contracts/prompt-pack-output.md`): each image gets one seamless prompt in a code block. Structural slots and preset IDs are not shown to the user. A Reference section appears only when an attached file is needed.
+- **Output contract** (`specs/002-prompt-pack-optimize/contracts/prompt-pack-output.md` and `contracts/brief-card.md`, which replace 001's sections 1 and 3): on a long intake the first reply is Kịch bản Media plus a Chốt nhanh block, with no prompts; each image gets one seamless prompt in a code block; the Chữ column holds one text mode per image. Structural slots and preset IDs are not shown to the user. A Reference section appears only when an attached file is needed. A mockup is added only when the user chooses it at Chốt nhanh item 3 or asks for it directly.
 - **Tool-agnostic prompts.** No per-tool adapters and no `--ar`, `--no` or `::` syntax. No quality buzzwords (8K, masterpiece, ultra-detailed, flawless). Phrase constraints positively.
 - **Product mockups only when the user asks for one at that spot.** Then: a real product reference image is required, the AI generates only the scene, people and light, and the pack notes that the real design is composited later and the AI metadata is kept.
 - Explanatory text is in Vietnamese with full diacritics. Prompt text is in English.
@@ -27,7 +27,7 @@ The source of truth for scope and decisions is `specs/001-image-prompt-pack/`: `
 - `plugins/image-prompt-pack/skills/prompt-pack/` holds:
   - `SKILL.md`
   - `agents/openai.yaml` (Codex metadata)
-  - `references/` with `anti-slop.md`, `presets.md` (24 presets, groups R/S/C, v0.1 untested), `image-types.md`, `example-pack.md`
+  - `references/` with `anti-slop.md`, `presets.md` (28 presets, groups R/S/C/E, v0.1 untested), `image-types.md`, `example-pack.md`, `brief-card.md`, `text-in-image.md`
 - `tests/fixtures/` holds the sample intakes.
 - `tests/acceptance.md` holds the pass/fail criteria for each fixture.
 - `tests/runs/` holds dry-run evidence.

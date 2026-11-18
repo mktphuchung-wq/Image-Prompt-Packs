@@ -5,7 +5,7 @@ Bài kiểm này trả lời một câu hỏi: preset có tạo ảnh mà ngư�
 ## Mục đích và phạm vi
 
 - Mỗi preset được kiểm riêng. Kết quả quyết định preset giữ, sửa hay bỏ.
-- Lần đầu chạy 12 preset của thí nghiệm nhỏ nhất (R01, R02, R03, R05, R06, R08, R10, S01, S03, S05, C02, R12). Trước khi lên 1.0.0 phải kiểm đủ 24 preset.
+- Lần đầu chạy 12 preset của thí nghiệm nhỏ nhất (R01, R02, R03, R05, R06, R08, R10, S01, S03, S05, C02, R12). Trước khi lên 1.0.0 phải kiểm đủ 28 preset (R 12, S 8, C 4, E 4). Nhóm E (biên tập/chuyên nghiệp, thêm ở v0.2) kiểm sau nhóm R, S, C.
 
 ## Chuẩn bị
 
@@ -58,6 +58,35 @@ Trạng thái theo vòng đời trong `data-model.md`: `v0.1 chưa test` → `đ
 | C02 | | | | v0.1 chưa test | |
 | C03 | | | | v0.1 chưa test | |
 | C04 | | | | v0.1 chưa test | Không có khung sinh ảnh; kiểm trôi nhân vật |
+| E01 | | | | v0.1 chưa test | Nhóm E (v0.2): biên tập thời trang ngoài trời |
+| E02 | | | | v0.1 chưa test | Nhóm E (v0.2): biên tập nội thất kiểu tạp chí |
+| E03 | | | | v0.1 chưa test | Nhóm E (v0.2): sản phẩm không nhãn; mockup thật theo anti-slop mục 5 |
+| E04 | | | | v0.1 chưa test | Nhóm E (v0.2): chân dung chuyên nghiệp |
+
+## So sánh v0.2 với 3 ảnh cũ (SC-103)
+
+Trạng thái: **CHƯA KIỂM CHỨNG**. Chưa có ảnh nào được tạo từ pack v0.2 và chưa có người xem. Mục này ghi giao thức để người chạy thực hiện; không ghi kết quả thay cho người chạy.
+
+
+1. Bài: `tests/fixtures/05-christmas-article.md`. Ba vị trí so sánh: sofa (ảnh 2 của pack v0.2), hành lang (ảnh 3), bếp (ảnh 4). Ba ảnh cũ tương ứng được mô tả trong `tests/fixtures/06-staged-images-feedback.md`.
+2. Tạo ba ảnh v0.2 từ ba prompt của pack, trên công cụ đang dùng, không đổi chữ nào trong prompt.
+3. Trộn sáu ảnh (ba v0.2, ba cũ), xóa nhãn nguồn, đánh lại số. Người chuẩn bị không chấm.
+4. Năm người xem mù trả lời hai câu cho từng ảnh: "Bạn có dùng ảnh này cho bài không?" và "Có thấy đồ chế hàng loạt không?"; sau đó chọn ảnh nào dùng cho bài khi so cạnh nhau.
+5. Đạt khi: ít nhất 4/5 người trả lời "dùng được" và ít nhất 4/5 người trả lời "không thấy đồ chế hàng loạt", **tính riêng cho từng câu**; và đa số người chọn ảnh v0.2 khi so cạnh ảnh cũ. Không quy thành điểm tổng.
+
+## Hero có chữ qua 7 mục QC (SC-106)
+
+1. Tạo hero theo chế độ 3 (AI vẽ chữ, tiêu đề "Indoor Christmas Decorations") hoặc chế độ 4 trên công cụ đang dùng, năm lần.
+2. Mỗi lần kiểm bằng 7 mục QC chữ trong `plugins/image-prompt-pack/skills/prompt-pack/references/text-in-image.md`.
+3. Đạt khi ít nhất 4/5 lần qua đủ 7 mục.
+4. Với tiêu đề tiếng Việt có dấu: thử một ảnh mẫu trước khi tạo cả loạt. Sai một dấu thì chuyển sang chế độ 2 (chèn chữ sau).
+
+### Bảng ghi kết quả v0.2
+
+| Mục | Số người "dùng được" (/5) | Số người "không thấy đồ chế" (/5) | Đa số chọn v0.2 | Trạng thái | Ghi chú |
+|---|---|---|---|---|---|
+| Pack v0.2 (sofa, hành lang, bếp) | | | | CHƯA KIỂM CHỨNG | Cần người chạy |
+| Hero chế độ 3, 5 lần (QC chữ, SC-106) | | | — | CHƯA KIỂM CHỨNG | Cần người chạy; đạt khi ≥ 4/5 lần qua 7 mục |
 
 ## Sau khi có kết quả
 

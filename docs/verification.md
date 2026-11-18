@@ -36,6 +36,18 @@ Hai lưu ý về cách kiểm:
 | SC-007: cùng intake cho cấu trúc tương đương trên ba harness | CHƯA KIỂM CHỨNG | | Cần chạy cùng intake trên Claude Code, Codex và ChatGPT |
 | Rà skill theo Constitution II–IV và chuỗi cấm (T029) | ĐÃ CHẠY THẬT | 2026-11-18 | Xem bảng rà bên dưới |
 | Đối chiếu FR và SC với file và tiêu chí nghiệm thu (T030) | ĐỌC TÀI LIỆU | 2026-11-18 | Bảng truy vết cuối `tests/acceptance.md` |
+| **v0.2** — Manifest 0.2.0 (quickstart 001 §1) | ĐÃ CHẠY THẬT | 2026-11-18 | PowerShell từ thư mục gốc: `OK 0.2.0`; bốn file JSON đọc được; CHANGELOG có mục `[0.2.0]` |
+| **v0.2** — Chạy khô US1 (fixture 05 sau "ok", fixture 06) | ĐÃ CHẠY THẬT (chạy khô) | 2026-11-18 | `tests/runs/2026-11-18-v0.2/us1.md`: 12 trên 12 tiêu chí đạt sau một vòng sửa (làm rõ cách đếm trang phục trong `anti-slop.md` §2; bỏ "lamp" ở một prompt) |
+| **v0.2** — Chạy khô US2 (A, B, trả lời một phần, F, G, hỏi việc khác khi đang chờ) | ĐÃ CHẠY THẬT (chạy khô) | 2026-11-18 | `us2.md`: V2-US2-1…9 đạt; V2-US2-7 chỉ kiểm mức bảng và trạng thái mặc định; V2-US2-10 là mô phỏng |
+| **v0.2** — Chạy khô US3 (chế độ 2, chế độ 3, tiếng Việt có dấu, chế độ 4) | ĐÃ CHẠY THẬT (chạy khô) | 2026-11-18 | `us3.md`: V2-US3-1…7 đạt ở mức văn bản; QC chữ kiểm trên văn bản prompt; SC-106 cần người chạy |
+| **v0.2** — Chạy khô US4 (B, D, fixture 01, fixture 03) | ĐÃ CHẠY THẬT (chạy khô) | 2026-11-18 | `us4.md`: V2-US4-1…5 đạt; "Reference ảnh sản phẩm thật" là yêu cầu trong pack, chưa có ảnh để kiểm |
+| **v0.2** — Dừng chờ Chốt nhanh và "ok" trên Claude Code, Codex, ChatGPT (SC-104) | CHƯA KIỂM CHỨNG | | Chưa chạy trên harness thật; cần người chạy `quickstart.md` mục 3 (kịch bản A, B, F, G) trên từng harness |
+| **v0.2** — Mockup có xác nhận trên harness thật (SC-105) | CHƯA KIỂM CHỨNG | | Chưa chạy; cần người chạy kịch bản B và D |
+| **v0.2** — Blind test so với 3 ảnh cũ (SC-103) | CHƯA KIỂM CHỨNG | | Giao thức ở `docs/blind-test.md`; cần 5 người và ảnh thật |
+| **v0.2** — Hero có chữ qua 7 mục QC (SC-106) | CHƯA KIỂM CHỨNG | | Cần 5 lần tạo ảnh thật; giao thức ở `docs/blind-test.md` |
+| **v0.2** — Số lần sửa prompt trên mỗi pack giảm so với v0.1 (SC-107) | CHƯA KIỂM CHỨNG | | Cần đo trên cùng bài với công cụ thật |
+| **v0.2** — Tỉ lệ "ok" nguyên khối ≥ 60% (SC-108) | CHƯA KIỂM CHỨNG | | Cần đo khi dùng thật; dưới 60% thì xem lại mặc định |
+| **v0.2** — Rà skill theo Constitution II–IV và chuỗi cấm (T028) | ĐÃ CHẠY THẬT | 2026-11-18 | Xem bảng "Rà skill v0.2" cuối file |
 
 ## Rà skill theo Constitution (T029): ĐÃ RÀ, 2026-11-18
 
@@ -69,3 +81,41 @@ Kiểm theo chuỗi và cấu trúc:
 | III. Dựa vào năng lực model, không viết procedure | `SKILL.md` có mục tiêu, tiêu chí, đầu ra, tri thức và ranh giới. Preset là điểm tựa, không phải biểu mẫu bắt buộc | Đạt |
 | IV. Chạy được trên nhiều harness | Một thư mục skill dùng chung; manifest của hai harness là vỏ mỏng; ChatGPT dùng cùng thư mục | Đạt về cấu trúc. ChatGPT: CHƯA KIỂM CHỨNG |
 | V. Cài đặt và cập nhật qua marketplace Git | Hai marketplace; `version` 0.1.0 ở hai `plugin.json` và trong `CHANGELOG.md` | Đạt về cấu trúc. URL Git: CHƯA KIỂM CHỨNG |
+
+## Rà skill v0.2 (T028): ĐÃ RÀ, 2026-11-18
+
+Số dòng đếm bằng `wc -l` trên file hiện tại (phiên bản 0.2.0):
+
+| File | Số dòng | Giới hạn | Kết quả |
+|---|---|---|---|
+| `skills/prompt-pack/SKILL.md` | 138 | ≤ ~150 | Đạt |
+| `references/anti-slop.md` | 107 | ≤ ~300 | Đạt |
+| `references/brief-card.md` | 75 | ≤ ~150 | Đạt |
+| `references/text-in-image.md` | 71 | ≤ ~200 | Đạt |
+| `references/presets.md` | 77 | ≤ ~300 | Đạt |
+| `references/image-types.md` | 27 | ≤ ~200 | Đạt |
+| `references/example-pack.md` | 101 | ≤ ~300 | Đạt |
+
+Kiểm theo chuỗi, cấu trúc và mã hóa:
+
+| Mục kiểm | Kết quả |
+|---|---|
+| Thủ tục đánh số ("Bước n", "Step n") | Không có. Các danh sách đánh số là lựa chọn của Chốt nhanh và mục của đầu ra, không phải bước làm việc |
+| Tên tool hoặc harness, biến đường dẫn riêng (`${CLAUDE_PLUGIN_ROOT}`, `mcp__`, `Read(`, `Bash(`, `WebFetch`, Claude, Codex, ChatGPT) | Không có trong SKILL và references |
+| Tên công cụ tạo ảnh hoặc thiết kế (Midjourney, DALL·E, GPT, Gemini, Canva, Figma, Photoshop, và các tên tương tự) | Không có. Một khớp nhầm với chuỗi "buckling" đã được loại trừ |
+| Đường dẫn cá nhân (ổ đĩa, `/Users/`, `/home/`) | Không có |
+| Chuỗi cấm (`--ar`, `--no`, `::`, 8K, masterpiece, ultra-detailed, stunning, flawless, hyperrealistic) | Chỉ xuất hiện trong danh sách cấm (`anti-slop.md` §2), trong bảng dấu hiệu nêu tên từ làm ví dụ (§3), và trong Ví dụ B là prompt sai có ghi rõ |
+| Từ cấm đứng một mình (cozy, welcoming, lived-in, natural, authentic, realistic, imperfect, charming, "slightly imperfect", "subtle imperfections") trong prompt mẫu | Không có trong prompt mẫu. Chỉ xuất hiện trong danh sách cấm và trong Ví dụ B là prompt sai |
+| Preset ID trỏ từ skill | 28 ID đều tồn tại trong `presets.md`; không có ID trỏ sai |
+| Prompt mẫu đạt tự kiểm (ghi số từ) | Ví dụ A (pack): 78, 69, 60, 78, 68 từ; Ví dụ B (sửa): 77 từ; `text-in-image.md`: 80 (chế độ 3), 63 (chế độ 2); khung nhóm E: 62–66 từ |
+| Tiếng Việt có dấu | Kiểm theo byte: các khớp không dấu đều là từ không dấu đúng chính tả (ví dụ "nội dung", "chân dung", "cung cấp") |
+| Mã hóa và xuống dòng | UTF-8 không BOM, LF (kiểm bằng byte) |
+| Quy tắc v0.1 đã thay ("tối đa 3 câu hỏi") | Không còn trong bất kỳ file nào của skill |
+
+Đối chiếu Constitution (v0.2):
+
+| Nguyên tắc | Kiểm | Kết quả |
+|---|---|---|
+| II. Đơn giản trước | Chỉ Markdown; không script, không build | Đạt |
+| III. Không viết procedure | Chốt nhanh và tự kiểm viết thành tiêu chí; không "Bước 1…"; mẫu đầu ra là hợp đồng, không phải quy trình | Đạt |
+| IV. Chạy trên nhiều harness | Không có tên harness trong skill; có đường lui khi không có người trả lời (xuất luôn, ghi mặc định ở đầu) | Đạt về cấu trúc. Hành vi dừng chờ trên Claude Code, Codex, ChatGPT: CHƯA KIỂM CHỨNG |

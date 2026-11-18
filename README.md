@@ -11,6 +11,8 @@ Plugin cho Claude Code và Codex, cùng một nguồn nội dung dùng được 
 - "Ảnh ra trông AI quá, sửa prompt giúp tôi." (kèm prompt và mô tả lỗi của ảnh).
 - "Ảnh 2 cần mockup áo hoodie của shop." Chỉ dùng khi bạn thật sự cần mockup sản phẩm; khi đó cần đính kèm ảnh sản phẩm thật.
 
+Với bài dài (khoảng 800 từ trở lên, hoặc từ 4 mục lớn trở lên) hoặc khi cần từ 4 ảnh, plugin trả trước khối **Chốt nhanh** (tối đa 4 mục, mỗi mục có mặc định). Trả lời "ok" để nhận pack theo mặc định, hoặc sửa một mục rồi mới nhận pack. Yêu cầu 1–3 ảnh được xuất luôn.
+
 ## Cài và cập nhật
 
 ### Claude Code
@@ -47,7 +49,7 @@ ChatGPT chưa có cơ chế marketplace Git đã kiểm chứng, nên dùng cùn
 
 ## Trạng thái phiên bản
 
-Phiên bản hiện tại là 0.1.0. 24 preset phong cách (R 12, S 8, C 4) đang ở nhãn **v0.1 chưa test** trên model thật. Kết quả blind test ghi theo `docs/blind-test.md`. Mức kiểm chứng từng hạng mục xem ở `docs/verification.md`.
+Phiên bản hiện tại là 0.2.0. 28 preset phong cách (R 12, S 8, C 4, E 4) đang ở nhãn **v0.1 chưa test** trên model thật. Bản 0.2.0 thêm Chốt nhanh, chế độ chữ trong ảnh, tự kiểm trước khi xuất và bảng đa dạng cấp pack; chi tiết ở `CHANGELOG.md`. Kết quả blind test ghi theo `docs/blind-test.md`. Mức kiểm chứng từng hạng mục xem ở `docs/verification.md`.
 
 ## Cấu trúc repo
 

@@ -1,6 +1,6 @@
 {
   "name": "image-prompt-pack",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Turns any content or request into a copy-ready, anti-slop image prompt pack. Does not generate images.",
   "author": {"name": "SEO Konic Team"},
   "keywords": ["image-prompt", "prompt-pack", "anti-slop", "media-plan", "content"],
