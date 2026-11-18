@@ -1,0 +1,21 @@
+{
+  "name": "image-prompt-pack",
+  "version": "0.1.0",
+  "description": "Turns any content or request into a copy-ready, anti-slop image prompt pack. Does not generate images.",
+  "author": {"name": "SEO Konic Team"},
+  "keywords": ["image-prompt", "prompt-pack", "anti-slop", "media-plan", "content"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Image Prompt Pack",
+    "shortDescription": "Copy-ready, anti-slop image prompt packs. Does not generate images.",
+    "longDescription": "Đọc bài viết, log, lịch sử hội thoại hoặc một câu yêu cầu, rồi lập Kịch bản Media và Prompt Pack: mỗi ảnh một prompt tiếng Anh copy dùng ngay, đã áp quy tắc chống slop. Plugin không tạo ảnh; bạn dán prompt vào công cụ tạo ảnh đang dùng.",
+    "developerName": "SEO Konic Team",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Làm prompt ảnh cho bài viết này.",
+      "Bài này cần những ảnh gì? Đưa prompt luôn.",
+      "Ảnh ra trông AI quá, sửa prompt giúp tôi."
+    ]
+  }
+}

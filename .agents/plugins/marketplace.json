@@ -1,0 +1,10 @@
+{
+  "name": "image-prompt-packs",
+  "interface": {"displayName": "Image Prompt Packs"},
+  "plugins": [{
+    "name": "image-prompt-pack",
+    "source": {"source": "local", "path": "./plugins/image-prompt-pack"},
+    "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+    "category": "Productivity"
+  }]
+}
