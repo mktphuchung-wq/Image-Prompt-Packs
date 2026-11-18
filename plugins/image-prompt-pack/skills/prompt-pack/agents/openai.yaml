@@ -1,0 +1,6 @@
+interface:
+  display_name: "Prompt Pack"
+  short_description: "Copy-ready, anti-slop image prompts from any content"
+  default_prompt: "Use $prompt-pack to plan the images for this article and give me copy-ready prompts."
+policy:
+  allow_implicit_invocation: true

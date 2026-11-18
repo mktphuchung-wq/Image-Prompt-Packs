@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "image-prompt-pack",
+  "displayName": "Image Prompt Pack",
+  "version": "0.1.0",
+  "description": "Turns any content or request into a copy-ready, anti-slop image prompt pack. Does not generate images.",
+  "author": {"name": "SEO Konic Team"},
+  "keywords": ["image-prompt", "prompt-pack", "anti-slop", "media-plan", "content"],
+  "skills": "./skills/"
+}

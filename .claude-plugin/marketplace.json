@@ -1,0 +1,12 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "image-prompt-packs",
+  "description": "Turns any content or request into a copy-ready, anti-slop image prompt pack. Does not generate images.",
+  "owner": {"name": "SEO Konic Team"},
+  "plugins": [{
+    "name": "image-prompt-pack",
+    "source": "./plugins/image-prompt-pack",
+    "description": "Turns any content or request into a copy-ready, anti-slop image prompt pack. Does not generate images.",
+    "category": "productivity"
+  }]
+}
