@@ -1,10 +1,19 @@
 {
   "name": "image-prompt-packs",
-  "interface": {"displayName": "Image Prompt Packs"},
-  "plugins": [{
-    "name": "image-prompt-pack",
-    "source": {"source": "local", "path": "./plugins/image-prompt-pack"},
-    "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
-    "category": "Productivity"
-  }]
+  "interface": {
+    "displayName": "Image Prompt Packs",
+    "shortDescription": "SEO Konic plugins for copy-ready, anti-slop image prompt packs (v0.2: brief card, text-in-image modes)"
+  },
+  "plugins": [
+    {
+      "name": "image-prompt-pack",
+      "source": {"source": "local", "path": "./plugins/image-prompt-pack"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity",
+      "interface": {
+        "displayName": "Image Prompt Pack",
+        "shortDescription": "Brief card, then copy-ready anti-slop image prompts"
+      }
+    }
+  ]
 }
