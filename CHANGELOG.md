@@ -2,6 +2,12 @@
 
 Ghi chú thay đổi của plugin `image-prompt-pack`. Định dạng theo Keep a Changelog; phiên bản theo SemVer.
 
+## [0.2.1] - 2026-11-19
+
+### Changed
+
+- Đồng bộ metadata với tính năng 0.2.0: mô tả plugin trong marketplace Claude, hai `plugin.json` (Claude, Codex), giao diện Codex (`shortDescription`, `longDescription`, `defaultPrompt`), `agents/openai.yaml` và mô tả kích hoạt của skill `prompt-pack` nay nêu Chốt nhanh, chế độ chữ trong ảnh và tự kiểm chống ảnh dàn dựng. Thêm keywords `brief-card`, `text-in-image`, `editorial`. Không đổi hành vi.
+
 ## [0.2.0] - 2026-11-18
 
 ### Added

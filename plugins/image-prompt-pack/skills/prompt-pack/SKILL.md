@@ -1,6 +1,6 @@
 ---
 name: prompt-pack
-description: "Turns any content, log, chat history or short request into a media plan and a copy-ready, anti-slop image prompt pack (one English prompt per image), and rewrites a prompt when the generated image looks like AI slop. Does not generate images. Use for 'prompt ảnh', 'làm ảnh cho bài này', 'image prompts', 'media plan', 'ảnh bị AI quá', 'sửa prompt ảnh'."
+description: "Turns any content, log, chat history or short request into a media plan and a copy-ready, anti-slop image prompt pack (one English prompt per image). Long intakes get a quick brief card with defaults (visual direction, text in image, mockup, image count) before the pack; each image gets a text-in-image mode; prompts are self-checked against staged, over-clean shots. Also rewrites a prompt when the generated image looks like AI slop or staged. Does not generate images. Use for 'prompt ảnh', 'làm ảnh cho bài này', 'image prompts', 'media plan', 'ảnh có chữ', 'hero có tiêu đề', 'ảnh bị AI quá', 'ảnh như sắp đặt', 'sửa prompt ảnh'."
 ---
 
 # Prompt Pack

@@ -1,12 +1,16 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "image-prompt-packs",
-  "description": "Turns any content or request into a copy-ready, anti-slop image prompt pack. Does not generate images.",
-  "owner": {"name": "SEO Konic Team"},
-  "plugins": [{
-    "name": "image-prompt-pack",
-    "source": "./plugins/image-prompt-pack",
-    "description": "Turns any content or request into a copy-ready, anti-slop image prompt pack. Does not generate images.",
-    "category": "productivity"
-  }]
+  "description": "SEO Konic plugins for copy-ready, anti-slop image prompt packs.",
+  "owner": {
+    "name": "SEO Konic Team"
+  },
+  "plugins": [
+    {
+      "name": "image-prompt-pack",
+      "source": "./plugins/image-prompt-pack",
+      "description": "Plans the images for any article, log or request and returns copy-ready, anti-slop image prompts: a quick brief card with defaults before long packs, per-image text-in-image modes, and self-checks against staged-looking shots. Does not generate images.",
+      "category": "productivity"
+    }
+  ]
 }

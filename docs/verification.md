@@ -1,4 +1,4 @@
-# Mức kiểm chứng: Image Prompt Pack v0.1.0
+# Mức kiểm chứng: Image Prompt Pack (từ v0.1.0; dòng v0.2 ở dưới)
 
 Mỗi dòng ghi một việc đã được kiểm đến mức nào, vào ngày nào, và bằng chứng là gì. Bốn mức (theo `specs/001-image-prompt-pack/research.md`):
 

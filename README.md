@@ -49,7 +49,7 @@ ChatGPT chưa có cơ chế marketplace Git đã kiểm chứng, nên dùng cùn
 
 ## Trạng thái phiên bản
 
-Phiên bản hiện tại là 0.2.0. 28 preset phong cách (R 12, S 8, C 4, E 4) đang ở nhãn **v0.1 chưa test** trên model thật. Bản 0.2.0 thêm Chốt nhanh, chế độ chữ trong ảnh, tự kiểm trước khi xuất và bảng đa dạng cấp pack; chi tiết ở `CHANGELOG.md`. Kết quả blind test ghi theo `docs/blind-test.md`. Mức kiểm chứng từng hạng mục xem ở `docs/verification.md`.
+Phiên bản hiện tại là 0.2.1 (0.2.1 chỉ đồng bộ metadata). 28 preset phong cách (R 12, S 8, C 4, E 4) đang ở nhãn **v0.1 chưa test** trên model thật. Bản 0.2.0 thêm Chốt nhanh, chế độ chữ trong ảnh, tự kiểm trước khi xuất và bảng đa dạng cấp pack; chi tiết ở `CHANGELOG.md`. Kết quả blind test ghi theo `docs/blind-test.md`. Mức kiểm chứng từng hạng mục xem ở `docs/verification.md`.
 
 ## Cấu trúc repo
 
