@@ -11,7 +11,9 @@ Plugin cho Claude Code và Codex, cùng một nguồn nội dung dùng được 
 - "Ảnh ra trông AI quá, sửa prompt giúp tôi." (kèm prompt và mô tả lỗi của ảnh).
 - "Ảnh 2 cần mockup áo hoodie của shop." Chỉ dùng khi bạn thật sự cần mockup sản phẩm; khi đó cần đính kèm ảnh sản phẩm thật.
 
-Với bài dài (khoảng 800 từ trở lên, hoặc từ 4 mục lớn trở lên) hoặc khi cần từ 4 ảnh, plugin trả trước khối **Chốt nhanh** (tối đa 4 mục, mỗi mục có mặc định). Trả lời "ok" để nhận pack theo mặc định, hoặc sửa một mục rồi mới nhận pack. Yêu cầu 1–3 ảnh được xuất luôn.
+Plugin chỉ dừng hỏi khi có trường hợp đặc biệt: chữ trong ảnh (banner, hero, ảnh chia sẻ chưa chốt cách đặt chữ), phong cách, nội dung đặc biệt (chỗ chờ sản phẩm, người hoặc thương hiệu thật, số liệu cho infographic, nhiều ngôn ngữ) hoặc format mới lạ (carousel, before/after, ảnh so sánh...). Khi dừng, plugin trả khối **Chốt nhanh** kèm lý do và mặc định (tối đa 4 mục; banner gồm bốn điểm: tiêu đề, cách đặt chữ, vùng chữ, khung). Trả lời "ok" để nhận pack theo mặc định, hoặc sửa theo số dòng trong bảng Kịch bản Media. Không có trường hợp đặc biệt, hoặc bạn nói "đưa luôn", thì pack xuất ngay. Số ảnh và độ dài bài không phải lý do dừng.
+
+Hero và ảnh chia sẻ chế độ chèn chữ sau có vùng chữ dựng sẵn: prompt nêu vị trí và cách tạo vùng, còn mỗi ảnh có khối **Vùng chữ** (vị trí, cỡ, tông nền, màu chữ gợi ý, lề an toàn) để bạn thêm tiêu đề bằng công cụ thiết kế.
 
 ## Cài và cập nhật
 
@@ -49,7 +51,7 @@ ChatGPT chưa có cơ chế marketplace Git đã kiểm chứng, nên dùng cùn
 
 ## Trạng thái phiên bản
 
-Phiên bản hiện tại là 0.2.1 (0.2.1 chỉ đồng bộ metadata). 28 preset phong cách (R 12, S 8, C 4, E 4) đang ở nhãn **v0.1 chưa test** trên model thật. Bản 0.2.0 thêm Chốt nhanh, chế độ chữ trong ảnh, tự kiểm trước khi xuất và bảng đa dạng cấp pack; chi tiết ở `CHANGELOG.md`. Kết quả blind test ghi theo `docs/blind-test.md`. Mức kiểm chứng từng hạng mục xem ở `docs/verification.md`.
+Phiên bản hiện tại là 0.3.0. Bản 0.3.0 thêm vùng chữ dựng sẵn cho hero (chế độ 2, dùng lại ở chế độ 3 và 4), khối Vùng chữ dưới prompt, và lượt đầu chỉ dừng khi có trường hợp đặc biệt; bản 0.2.1 chỉ đồng bộ metadata. 28 preset phong cách (R 12, S 8, C 4, E 4) đang ở nhãn **v0.1 chưa test** trên model thật. Bản 0.2.0 thêm Chốt nhanh, chế độ chữ trong ảnh, tự kiểm trước khi xuất và bảng đa dạng cấp pack; chi tiết ở `CHANGELOG.md`. Kết quả blind test ghi theo `docs/blind-test.md`. Mức kiểm chứng từng hạng mục xem ở `docs/verification.md`.
 
 ## Cấu trúc repo
 

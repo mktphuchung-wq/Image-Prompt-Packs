@@ -9,7 +9,7 @@
     {
       "name": "image-prompt-pack",
       "source": "./plugins/image-prompt-pack",
-      "description": "Plans the images for any article, log or request and returns copy-ready, anti-slop image prompts: a quick brief card with defaults before long packs, per-image text-in-image modes, and self-checks against staged-looking shots. Does not generate images.",
+      "description": "Plans the images for any article, log or request and returns copy-ready, anti-slop image prompts: a brief card only for special cases (text, style, special content, new format), a built-in copy space for hero and share images, per-image text-in-image modes, and self-checks against staged-looking shots. Does not generate images.",
       "category": "productivity"
     }
   ]

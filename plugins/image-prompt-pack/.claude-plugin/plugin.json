@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "image-prompt-pack",
   "displayName": "Image Prompt Pack",
-  "version": "0.2.1",
-  "description": "Plans the images for any article, log or request and returns copy-ready, anti-slop image prompts: a quick brief card with defaults before long packs, per-image text-in-image modes, and self-checks against staged-looking shots. Does not generate images.",
+  "version": "0.3.0",
+  "description": "Plans the images for any article, log or request and returns copy-ready, anti-slop image prompts: a brief card only for special cases (text, style, special content, new format), a built-in copy space for hero and share images, per-image text-in-image modes, and self-checks against staged-looking shots. Does not generate images.",
   "author": {
     "name": "SEO Konic Team"
   },

@@ -1,17 +1,19 @@
 # Ví dụ chuẩn đầu ra
 
-Hai ví dụ minh họa đúng hình dạng đầu ra trong `SKILL.md`. Ví dụ A là một bài dài đi qua hai lượt: Chốt nhanh dừng chờ, rồi pack sau "ok". Ví dụ B là một lượt sửa prompt. Các prompt ở đây là ví dụ, không phải khuôn bắt buộc.
+Hai ví dụ minh họa đúng hình dạng đầu ra trong `SKILL.md`. Ví dụ A là một bài có hero cần chữ, đi qua hai lượt: Chốt nhanh dừng chờ vì cách đặt chữ chưa chốt, rồi pack sau "ok". Ví dụ B là một lượt sửa prompt. Các prompt ở đây là ví dụ, không phải khuôn bắt buộc.
 
-## Ví dụ A: bài dài, hai lượt
+## Ví dụ A: bài có hero cần chữ, hai lượt
 
-Intake giả định: bài blog tiếng Việt khoảng 1.500 từ, chủ đề "Cách bố trí góc làm việc tại nhà trong căn hộ nhỏ". Bài có ba phần: chọn vị trí gần cửa sổ, tách khu làm việc khỏi khu ngủ bằng kệ hoặc rèm, và giữ bàn gọn. Bài không nêu sản phẩm và không yêu cầu mockup.
+Intake giả định: bài blog tiếng Việt khoảng 1.500 từ, chủ đề "Cách bố trí góc làm việc tại nhà trong căn hộ nhỏ". Bài có ba phần: chọn vị trí gần cửa sổ, tách khu làm việc khỏi khu ngủ bằng kệ hoặc rèm, và giữ bàn gọn. Bài không nêu sản phẩm và không yêu cầu mockup. Intake chưa nói hero và ảnh chia sẻ có chữ hay không, nên trường hợp đặc biệt (1) kích hoạt.
 
 ### Lượt 1: Chốt nhanh và Kịch bản Media (dừng chờ)
 
 ## Chốt nhanh (trả lời "ok" để dùng mặc định)
-1. Hướng hình: Đời thường (mặc định — bài hướng dẫn trong căn hộ nhỏ, người đọc cần thấy góc làm việc thật) · Biên tập: ảnh chỉn chu kiểu tạp chí nội thất cho hero · Minh họa: giấy cắt cho sơ đồ bố trí
-2. Chữ trong ảnh: hero và ảnh chia sẻ chừa vùng để chèn tiêu đề sau bằng công cụ thiết kế (mặc định) · AI vẽ luôn tiêu đề "Góc làm việc trong căn hộ nhỏ" · Không chữ. Các ảnh khác: không chữ.
-3. Số ảnh: 5 ảnh; hero 16:9, ảnh chia sẻ 1.91:1. Giữ nguyên?
+1. Banner (lý do: hero và ảnh chia sẻ có chỗ đặt chữ, nhưng intake chưa chốt cách đặt chữ; thấy ở ảnh 1 và ảnh 5 của bảng dưới)
+   a. Tiêu đề: "Góc làm việc trong căn hộ nhỏ", 1 dòng (mặc định) · "Góc làm việc trong căn hộ nhỏ: bố trí ba khu", 2 dòng
+   b. Cách đặt chữ: chừa vùng, ảnh cố ý không có chữ, thêm tiêu đề sau bằng công cụ thiết kế (mặc định) · AI vẽ luôn tiêu đề · hai lượt
+   c. Vùng chữ: 1/3 trái trên mảng tường xám trung tính (mặc định — cảnh có tường trơn cạnh cửa sổ) · làm mềm hậu cảnh bên trái
+   d. Khung: hero 16:9 + ảnh chia sẻ 1.91:1 (mặc định) · thêm Pinterest 2:3
 
 ## Kịch bản Media
 **Nội dung:** Hướng dẫn bố trí một góc làm việc tại nhà trong căn hộ dưới 50 m². Trọng tâm là chọn vị trí gần cửa sổ, tách khu làm việc khỏi khu ngủ và giữ bàn gọn để làm việc được cả ngày.
@@ -20,13 +22,15 @@ Intake giả định: bài blog tiếng Việt khoảng 1.500 từ, chủ đề 
 
 | # | Ảnh | Vị trí | Mục đích | Loại | Tỉ lệ | Hướng | Khung | Độ cao máy | Ánh sáng | Thời tiết/giờ | Người | Chữ |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Hero | Đầu bài | Một góc làm việc gọn, sáng, ngay đầu bài | hero | 16:9 | Đời thường | toàn cảnh | ngang tầm mắt | trung tính ban ngày, cửa sổ | sáng sớm | một người | 2 chèn chữ sau |
+| 1 | Hero | Đầu bài | Một góc làm việc gọn, sáng, ngay đầu bài | hero | 16:9 | Đời thường | toàn cảnh | ngang tầm mắt | trung tính ban ngày, cửa sổ | sáng sớm | một người | 2 chèn chữ sau — 1/3 trái |
 | 2 | Minh họa tách khu | Mục tách khu làm việc khỏi khu ngủ | Gợi ý bằng hình: kệ thấp chia khu | minh họa | 4:3 | Minh họa | trung cảnh | đứng nhìn xuống | trung tính ban ngày | ban ngày | không | 0 không chữ |
 | 3 | Minh họa ánh sáng | Mục chọn vị trí gần cửa sổ | Ánh đèn bàn buổi tối trên trang giấy | minh họa | 3:2 | Biên tập | cận chi tiết | ngang tầm mắt | ấm tungsten tối, đèn bàn | tối | tay | 0 không chữ |
-| 4 | Infographic ba khu | Cuối bài | Tóm tắt ba khu bố trí; tiêu đề thêm sau | infographic | 4:3 | Minh họa | toàn cảnh | đứng nhìn xuống | trung tính ban ngày | ban ngày | không | 2 chèn chữ sau |
-| 5 | Ảnh chia sẻ | Ảnh đại diện khi chia sẻ | Bàn làm việc nhìn từ trên xuống cho link preview | OG | 1.91:1 | Đời thường | trung cảnh | đứng nhìn xuống | lạnh u ám, cửa sổ | chiều nhiều mây | không | 2 chèn chữ sau |
+| 4 | Infographic ba khu | Cuối bài | Tóm tắt ba khu bố trí; tiêu đề thêm sau | infographic | 4:3 | Minh họa | toàn cảnh | đứng nhìn xuống | trung tính ban ngày | ban ngày | không | 2 chèn chữ sau — 1/3 phải |
+| 5 | Ảnh chia sẻ | Ảnh đại diện khi chia sẻ | Bàn làm việc nhìn từ trên xuống cho link preview | OG | 1.91:1 | Đời thường | trung cảnh | đứng nhìn xuống | lạnh u ám, cửa sổ | chiều nhiều mây | không | 2 chèn chữ sau — 1/3 trái |
 
-Lượt này chưa có prompt. Trả lời "ok" để nhận pack theo mặc định, hoặc sửa một mục.
+Sửa format theo số dòng, ví dụ "ảnh 3 đổi 4:5, bỏ ảnh 5", hoặc trả "ok".
+
+Lượt này chưa có prompt. Trả lời "ok" để nhận pack theo mặc định. Nếu người dùng trả "ảnh 3 đổi 4:5, bỏ ảnh 5, còn lại ok", pack chỉ đổi ảnh 3 sang khung 4:5 và bỏ ảnh 5; bốn ảnh còn lại giữ nguyên dòng trong bảng.
 
 ### Lượt 2: sau "ok" (pack theo mặc định)
 
@@ -34,13 +38,14 @@ Lượt này chưa có prompt. Trả lời "ok" để nhận pack theo mặc đ�
 (Bảng như trên; không đổi vì người dùng trả lời "ok".)
 
 ## Prompt Pack
-Phong cách chung: ánh sáng cửa sổ thật, bảng màu be ấm, xanh sage và than chì, không dựng studio. Số từ tự kiểm: ảnh 1 — 78; ảnh 2 — 69; ảnh 3 — 60; ảnh 4 — 78; ảnh 5 — 68.
+Phong cách chung: ánh sáng cửa sổ thật, bảng màu be ấm, xanh sage và than chì, không dựng studio. Số từ tự kiểm: ảnh 1 — 75; ảnh 2 — 69; ảnh 3 — 55; ảnh 4 — 77; ảnh 5 — 67.
 
 ### Ảnh 1 — Hero
 ```text
-Photo of a woman with her hair tied back, typing on a laptop at a small wooden desk beside a bright window, mid-sentence, eyes on the screen. Half-finished tea, a coiled phone charger and a stack of paper on the desk. Soft morning daylight from the left. Shot on a recent smartphone, eye level, slightly off-center, horizontal 16:9 frame. Clean mid-grey wall space across the top third for a headline added later. Unposed, not retouched, sharp focus throughout.
+Photo of a woman with her hair tied back typing on a laptop at a wooden desk, on the right third of the frame. Half-finished tea, a coiled phone charger and a stack of paper on the desk. The left third is a plain mid-grey wall, nothing in that area. Soft morning daylight from the left. Shot on a recent smartphone, eye level, horizontal 16:9 frame. Unposed, not retouched, not cinematic. No readable text anywhere.
 ```
-**Chữ:** vùng tường xám trung tính phía trên để chèn tiêu đề bằng công cụ thiết kế.
+**Vùng chữ:** 1/3 trái, khoảng 40% khung · cách tạo: tường xám trung tính có thật (a) · nền tối trung bình → chữ trắng hoặc kem · lề an toàn ~5% · tiêu đề 1 dòng · cắt sang 1.91:1 vẫn còn nguyên; khung 2:3 dùng prompt dọc riêng.
+Ảnh cố ý không có chữ; thêm tiêu đề bằng công cụ thiết kế.
 
 ### Ảnh 2 — Minh họa tách khu
 ```text
@@ -49,24 +54,28 @@ Hand-cut paper collage of a small apartment corner split by a low bookshelf: a d
 
 ### Ảnh 3 — Minh họa ánh sáng
 ```text
-Editorial still-life photo of a hand resting on a blank printed sheet beside a ceramic mug and a small plant on a light wooden desk at night. Warm tungsten desk lamp from the left, a soft pool of light across the sheet. Shot straight-on with a 50mm lens look, deep focus, not retouched. No readable text anywhere, horizontal 3:2 frame.
+Editorial still-life photo of a hand resting on a blank printed sheet beside a ceramic mug and a small plant on a light wooden desk at night. Warm tungsten desk lamp from the left, a soft pool of light across the sheet. Shot straight-on, deep focus, not retouched. No readable text anywhere, horizontal 3:2 frame.
 ```
 
 ### Ảnh 4 — Infographic ba khu
 ```text
-Flat top-down plan of a small apartment corner in three zones: a desk zone, a shelf zone and a light zone, marked by a sage dot, a cream square and a charcoal line. Simple arrows link the zones. Three spot colors, sage green, cream and charcoal, visible misregistration, grainy halftone, paper texture, flat shapes. Flat even light from above. No readable text anywhere; clean empty area across the top third for a headline added later, horizontal 4:3 frame.
+Flat top-down plan of a small apartment corner in three zones: a desk zone, a shelf zone and a light zone, marked by a sage dot, a cream square and a charcoal line. The right third of the frame is a wide flat area of cream paper, nothing else on it. Three spot colors, sage green, cream and charcoal, visible misregistration, grainy halftone, flat shapes. Flat even light from above. No readable text anywhere, horizontal 4:3 frame.
 ```
-**Chữ:** tiêu đề thêm sau ở vùng trống phía trên; số thứ tự thêm bằng công cụ thiết kế.
+**Vùng chữ:** 1/3 phải, khoảng 35% khung · cách tạo: mảng giấy kem phẳng, cho hướng Minh họa (c) · nền sáng dịu → chữ gần đen · lề an toàn ~5% · tiêu đề 1 dòng · cắt sang 1.91:1 vẫn còn nguyên; khung 2:3 dùng prompt dọc riêng.
+Ảnh cố ý không có chữ; thêm tiêu đề bằng công cụ thiết kế. Số thứ tự của ba khu cũng thêm bằng công cụ thiết kế.
 
 ### Ảnh 5 — Ảnh chia sẻ
 ```text
-Overhead photo of a half-finished cup of tea, an open notebook and a phone face-down on a wooden desk, a pencil across the page, cool overcast afternoon daylight from the window side. Shot from directly above, horizontal 1.91:1 frame with the subject kept away from the edges. Clean empty area on the left for a headline added later; no readable text anywhere. Unposed, not retouched, sharp focus throughout.
+Overhead photo of a half-finished cup of tea and an open notebook on a wooden desk, a phone face-down and a pencil across the page, cool overcast afternoon daylight from the window side. Shot from directly above, horizontal 1.91:1 frame. The left third is plain bare wooden desk, nothing in that area. Subject kept away from the edges. Unposed, not retouched, not cinematic. No readable text anywhere.
 ```
-**Chữ:** vùng trống bên trái để thêm tiêu đề bằng công cụ thiết kế. **Alt gợi ý:** "Bàn làm việc nhỏ cạnh cửa sổ, nhìn từ trên xuống."
+**Vùng chữ:** 1/3 trái, khoảng 35% khung · cách tạo: mặt bàn gỗ trơn có thật (a) · nền sáng dịu → chữ gần đen · lề an toàn ~5% · tiêu đề 1 dòng · cắt sang 16:9 vẫn còn nguyên; khung 2:3 dùng prompt dọc riêng.
+Ảnh cố ý không có chữ; thêm tiêu đề bằng công cụ thiết kế.
+**Alt gợi ý:** "Bàn làm việc nhỏ cạnh cửa sổ, nhìn từ trên xuống."
 
 **Vì sao đạt:**
-- Đời thường có vật lạc chủ đề và dấu vết người: ảnh 1 có sạc điện cuộn và trà uống dở; ảnh 5 có cốc trà và chiếc bút nằm trên trang giấy; mỗi vật lạc chủ đề chỉ dùng một lần trong pack.
+- Đời thường có vật lạc chủ đề và dấu vết người: ảnh 1 có sạc điện cuộn và trà uống dở; ảnh 5 có điện thoại úp mặt và cốc trà uống dở; mỗi vật lạc chủ đề chỉ dùng một lần trong pack.
 - Hướng Biên tập ở ảnh 3 không bắt vật lạc đề, nhưng vẫn đủ độ dài, số vật và không có số chẵn.
+- Vùng chữ: ảnh 1 và ảnh 5 dùng cách (a) vì có tường và mặt bàn trơn thật; ảnh 4 dùng cách (c) vì hướng Minh họa. Mỗi ảnh chế độ 2 nêu vị trí chủ thể, vị trí vùng, tông và câu chặn chữ, và có khối Vùng chữ đủ trường.
 - Bảng đạt FR-108: không hai ảnh liền nhau trùng cả Khung, Độ cao máy và Ánh sáng; ảnh 5 là ánh lạnh u ám; ảnh 1 và ảnh 3 có người hoặc tay; Khung cao nhất là 2 trên 5 ảnh.
 
 ## Ví dụ B: sửa ảnh dàn dựng

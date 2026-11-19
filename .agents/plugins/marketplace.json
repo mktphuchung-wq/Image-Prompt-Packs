@@ -2,7 +2,7 @@
   "name": "image-prompt-packs",
   "interface": {
     "displayName": "Image Prompt Packs",
-    "shortDescription": "SEO Konic plugins for copy-ready, anti-slop image prompt packs (v0.2: brief card, text-in-image modes)"
+    "shortDescription": "SEO Konic plugins for copy-ready, anti-slop image prompt packs (v0.3: copy space for hero, brief card only for special cases)"
   },
   "plugins": [
     {
@@ -12,7 +12,7 @@
       "category": "Productivity",
       "interface": {
         "displayName": "Image Prompt Pack",
-        "shortDescription": "Brief card, then copy-ready anti-slop image prompts"
+        "shortDescription": "Brief card only for special cases, then copy-ready prompts"
       }
     }
   ]

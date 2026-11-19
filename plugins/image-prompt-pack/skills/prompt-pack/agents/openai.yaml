@@ -1,6 +1,6 @@
 interface:
   display_name: "Prompt Pack"
-  short_description: "Brief card, then copy-ready anti-slop image prompts"
-  default_prompt: "Use $prompt-pack to plan the images for this article: show the quick brief card first, then give me copy-ready prompts."
+  short_description: "Brief card only for special cases; copy-ready anti-slop prompts"
+  default_prompt: "Use $prompt-pack to plan the images for this article: ask only where a special case needs a decision, then give me copy-ready prompts."
 policy:
   allow_implicit_invocation: true

@@ -88,6 +88,21 @@ Trạng thái: **CHƯA KIỂM CHỨNG**. Chưa có ảnh nào được tạo t�
 | Pack v0.2 (sofa, hành lang, bếp) | | | | CHƯA KIỂM CHỨNG | Cần người chạy |
 | Hero chế độ 3, 5 lần (QC chữ, SC-106) | | | — | CHƯA KIỂM CHỨNG | Cần người chạy; đạt khi ≥ 4/5 lần qua 7 mục |
 
+## Hero có vùng chữ: 5 ảnh đặt được tiêu đề (SC-202, v0.3)
+
+Trạng thái: **CHƯA KIỂM CHỨNG**. Chưa có ảnh nào được tạo từ prompt hero v0.3, và chạy khô không đo được điều này.
+
+1. Prompt: hero chế độ 2 của kịch bản I (`tests/runs/2026-11-19-v0.3/us1.md`, ảnh 1, 74 từ). Tạo 5 ảnh từ đúng prompt đó trên công cụ đang dùng, không đổi chữ nào trong prompt.
+2. Với mỗi ảnh, đặt thử một tiêu đề rộng khoảng 40% bề ngang vào vùng chữ đã nêu (khối Vùng chữ: 1/3 trái). Tiêu đề không được che chủ thể.
+3. Ghi hai số: số ảnh mà tiêu đề không che chủ thể; số ảnh mà tiêu đề còn đọc được khi thu về khoảng 360 px bề rộng.
+4. Đạt khi ít nhất 4/5 ảnh đạt cả hai điều kiện (SC-202).
+
+### Bảng ghi kết quả v0.3
+
+| Mục | Số ảnh không che chủ thể (/5) | Số ảnh đọc được ở 360 px (/5) | Trạng thái | Ghi chú |
+|---|---|---|---|---|
+| Hero v0.3, prompt ảnh 1 kịch bản I (SC-202) | | | CHƯA KIỂM CHỨNG | Cần người chạy; đạt khi ≥ 4/5 ở cả hai cột |
+
 ## Sau khi có kết quả
 
 1. Cập nhật cột Trạng thái và ghi lý do vào Ghi chú.

@@ -116,6 +116,69 @@ Chạy theo `specs/002-prompt-pack-optimize/quickstart.md` mục 3, kịch bản
 | V2-US4-4 | 03 (log không nhắc sản phẩm) | Không có mục 3 sản phẩm trong khối Chốt nhanh hoặc Đã dùng mặc định | FR-126, US4-AS4 | |
 | V2-US4-5 | Rà skill | `SKILL.md` không còn câu cũ "mockup chỉ khi người dùng yêu cầu đúng vị trí đó" đứng một mình mâu thuẫn với điều kiện mới; mục Ranh giới trỏ `anti-slop.md` mục 5 | FR-020 (thay), FR-126 | |
 
+## v0.3 — US1: vùng chữ trong prompt
+
+Chạy theo `specs/003-hero-copy-space/quickstart.md`, kịch bản I (fixture `05-christmas-article.md`, người dùng trả "ok" ở lượt đầu) và K (fixture `07-crowded-hero-request.md`). Cột **Đạt/Không** để người chạy điền. Kết quả chạy khô, số từ từng prompt chế độ 2 và số vòng sửa nằm trong `tests/runs/2026-11-19-v0.3/us1.md`.
+
+| # | Kịch bản | Tiêu chí | FR/SC | Đạt/Không |
+|---|---|---|---|---|
+| V3-US1-1 | I | Prompt hero chế độ 2 nêu vị trí chủ thể (ví dụ một phần ba bên phải) và vị trí vùng chữ ở phần còn lại | FR-201, SC-201 | |
+| V3-US1-2 | I | Prompt ghi đúng một cách tạo vùng chữ, nêu cụ thể: (a) gọi tên một bề mặt trơn có thật, nêu tông, "nothing in that area"; hoặc (b) "subject and foreground sharp" và hậu cảnh vùng chữ mềm, ít chi tiết; hoặc (c) mảng phẳng (chỉ hướng Minh họa). Không ghi hai cách cùng lúc | FR-202 | |
+| V3-US1-3 | I | Prompt nêu tông vùng chữ (tối trung bình hoặc sáng dịu), ít chi tiết, và không vật nào lấn vào vùng đó | FR-204 | |
+| V3-US1-4 | I | Prompt có câu chặn chữ tự thêm (ví dụ "No readable text anywhere") | FR-204, FR-105 | |
+| V3-US1-5 | I | Mỗi prompt chế độ 2 đạt 30–80 từ (ghi số từ), gọi tên tối đa 5 vật, không số chẵn, không từ cấm đứng một mình | FR-206, FR-101…FR-104 | |
+| V3-US1-6 | I, K | Prompt chế độ 2 không chứa "bokeh", thông số máy ảnh (f-stop, khẩu độ, tiêu cự), buzzword chất lượng hay cú pháp riêng của công cụ | FR-206, FR-012 | |
+| V3-US1-7 | K | Fixture 07 (cảnh chợ đông, không có bề mặt trơn): pack chọn cách (b), chủ thể và tiền cảnh nét, hậu cảnh vùng chữ mềm nhẹ, vật hậu cảnh còn nhận ra; pack nói rõ đã chọn cách (b) | FR-203, FR-205, Edge case cảnh đông | |
+| V3-US1-8 | I, K | Ngoại lệ làm mềm hậu cảnh chỉ áp cho vùng chữ của ảnh chế độ 2, 3, 4; ảnh chế độ 0 và 1 vẫn "deep focus" hoặc không làm mềm hậu cảnh | FR-205, SC-204 | |
+| V3-US1-9 | Rà `text-in-image.md` | Ví dụ khung dọc 2:3 có vùng chữ là dải trên, không phải một phần ba bên hông; ví dụ cách (b) dùng cho cảnh đông; cả hai nằm trong mục "Ví dụ chế độ 2" | FR-212, Edge case khung dọc | |
+| V3-US1-10 | Rà `text-in-image.md` | Ba ví dụ chế độ 2 đều đạt 30–80 từ (ghi số từ), không chứa "bokeh" hoặc "f/"; ví dụ chế độ 3 cùng cảnh với ví dụ (a) | FR-212, FR-211 | |
+| V3-US1-11 | I, K | Ghi chú SC-202, đo khi tạo ảnh thật: tạo 5 ảnh từ prompt hero, đặt tiêu đề rộng ~40% bề ngang vào vùng chữ; ≥ 4/5 không che chủ thể và đọc được khi thu còn ~360 px | SC-202 | Cần người chạy |
+
+## v0.3 — US2: khối Vùng chữ
+
+Chạy theo `specs/003-hero-copy-space/quickstart.md`, kịch bản I (fixture `05-christmas-article.md`, sau "ok"), H và K (fixture `07-crowded-hero-request.md`, sau "ok"). Cột **Đạt/Không** để người chạy điền. Kết quả chạy khô nằm trong `tests/runs/2026-11-19-v0.3/us2.md`.
+
+| # | Kịch bản | Tiêu chí | FR/SC | Đạt/Không |
+|---|---|---|---|---|
+| V3-US2-1 | I, K | Ngay dưới mỗi prompt chế độ 2 có khối **Vùng chữ** đủ tám trường: vị trí; cỡ (% khung); cách tạo (a, b hoặc c); tông nền; màu chữ gợi ý (mã hex nếu là màu thương hiệu); lề an toàn khoảng 5%; số dòng tiêu đề dự kiến; câu "Ảnh cố ý không có chữ; thêm tiêu đề bằng công cụ thiết kế." | FR-207, SC-201, FR-213 | |
+| V3-US2-2 | I | Cột Chữ của Kịch bản Media ghi chế độ và vị trí vùng cho ảnh chế độ 2, 3, 4, ví dụ "2 chèn chữ sau — 1/3 trái" | FR-208 | |
+| V3-US2-3 | I | Khối Vùng chữ nói vùng còn nguyên hay phải dời khi cắt sang khung khác; nếu vùng mất khi cắt (ví dụ sang 2:3) thì pack đề xuất prompt khung dọc riêng | FR-209, Edge case khung dọc | |
+| V3-US2-4 | H, K | Mục Banner (Chốt nhanh) mô tả mặc định chèn chữ sau là "chừa vùng để thêm tiêu đề, ảnh cố ý không có chữ"; khối "Đã dùng mặc định" nêu cùng ý (rà `brief-card.md`) | FR-210, FR-216 | |
+| V3-US2-5 | I, K | Khối Vùng chữ và Chốt nhanh mô tả bằng lời: không có sơ đồ bố cục bằng ký tự, không có tên công cụ thiết kế | FR-218, FR-012 | |
+| V3-US2-6 | K | Khối Vùng chữ ghi đúng cách (b) như prompt, và tông nền khớp với mô tả "medium-dark" trong prompt | FR-207, FR-204 | |
+| V3-US2-7 | I | Cỡ vùng nằm trong 35–50% khung; tiêu đề dài hoặc tiếng Việt nhiều dòng ghi 45–50% và số dòng dự kiến | FR-207, Edge case tiêu đề dài | |
+
+## v0.3 — US3: dùng lại vùng chữ
+
+Chạy theo `specs/003-hero-copy-space/quickstart.md`, kịch bản N (sau I, người dùng viết "hero cho AI vẽ luôn tiêu đề"); riêng chế độ 4 rà văn bản `references/text-in-image.md`. Cột **Đạt/Không** để người chạy điền. Kết quả chạy khô nằm trong `tests/runs/2026-11-19-v0.3/us3.md`.
+
+| # | Kịch bản | Tiêu chí | FR/SC | Đạt/Không |
+|---|---|---|---|---|
+| V3-US3-1 | N | Khi hero đổi sang chế độ 3: bố cục, chủ thể và vùng chữ giữ nguyên so với prompt chế độ 2 | FR-211, SC-205 | |
+| V3-US3-2 | N | Tiêu đề đặt trong vùng đã xác định, theo quy tắc chế độ 3: chuỗi trong ngoặc kép, kiểu hoa/thường, kiểu chữ theo đặc điểm, màu, vị trí, cỡ tương đối và câu "the headline appears once; no other text anywhere" | FR-211, FR-120 (002) | |
+| V3-US3-3 | N | Cột Chữ của hero đổi thành "3 AI vẽ chữ — 1/3 trái"; các dòng khác của bảng không đổi | FR-208, FR-219 | |
+| V3-US3-4 | N | Prompt chế độ 3 đạt 30–80 từ (ghi số từ), không có "bokeh" hoặc thông số máy ảnh | FR-206 | |
+| V3-US3-5 | Rà `text-in-image.md` | Chế độ 4: lượt 1 là prompt chế độ 2 nguyên văn kèm khối Vùng chữ; lượt 2 dùng câu chuẩn và đặt tiêu đề trong đúng vùng đó | FR-211, FR-121 (002) | |
+
+## v0.3 — US4: lượt đầu
+
+Chạy theo `specs/003-hero-copy-space/quickstart.md`: kịch bản H (fixture `05-christmas-article.md` kèm "làm prompt ảnh cho bài này"), J (sau H: "ảnh 3 đổi 4:5, bỏ ảnh 5, còn lại ok"), L (fixture `08-carousel-request.md`) và M (fixture `09-clear-request.md`). Cột **Đạt/Không** để người chạy điền. Kết quả chạy khô nằm trong `tests/runs/2026-11-19-v0.3/us4.md`.
+
+| # | Kịch bản | Tiêu chí | FR/SC | Đạt/Không |
+|---|---|---|---|---|
+| V3-US4-1 | H | Lượt đầu dừng: có Chốt nhanh và Kịch bản Media, không có khối prompt nào | FR-215 | |
+| V3-US4-2 | H | Mục Banner có đúng bốn điểm a–d, mỗi điểm một mặc định: (a) tiêu đề tối đa 6 từ và số dòng; (b) chèn chữ sau; (c) vùng chữ, phía nào và cách tạo, kèm một câu lý do; (d) các khung, ví dụ 16:9, 1.91:1, Pinterest 2:3. Không hỏi màu, kiểu chữ, CTA hay logo | FR-218 | |
+| V3-US4-3 | H | Mục Sản phẩm nêu đúng 2 chỗ chờ (chăn trên sofa, chăn trên giường phòng ngủ), mặc định không làm mockup | FR-215 (3), FR-126 | |
+| V3-US4-4 | H | Mỗi mục có lý do kích hoạt (trường hợp nào, thấy ở đâu trong bài) và có mặc định; không có mục Phong cách hay Format mới lạ vì fixture không kích hoạt trường hợp (2) và (4) | FR-215, FR-217, FR-220 | |
+| V3-US4-5 | H | Cột Chữ của hero ghi "2 chèn chữ sau — <vị trí>"; dưới bảng có dòng "sửa format theo số dòng … hoặc trả 'ok'" | FR-208, FR-219 | |
+| V3-US4-6 | H, L, M | Không có điều kiện dừng theo số ảnh hay độ dài bài (không còn "800 từ" hay "từ 4 ảnh" làm lý do); không hỏi từng ảnh | FR-217, FR-219 | |
+| V3-US4-7 | J | Sau trả lời "ảnh 3 đổi 4:5, bỏ ảnh 5, còn lại ok": chỉ hai thay đổi đó được áp (ảnh 3 sang khung 4:5 với prompt dọc; ảnh 5 bị bỏ); các dòng khác giữ nguyên | FR-219, US4-AS5 (spec 003) | |
+| V3-US4-8 | L | Fixture 08 (carousel 5 slide): lượt đầu dừng với mục Format mới lạ có lý do kích hoạt và mặc định; không có prompt | FR-215 (4), FR-217 | |
+| V3-US4-9 | M | Fixture 09: không dừng; pack xuất ngay với khối "Đã dùng mặc định" ở đầu nêu rõ các mặc định | FR-216, SC-206 | |
+| V3-US4-10 | H, L, M | SC-206: đúng 100% trên ba intake (H và L dừng, M xuất luôn); mỗi câu hỏi nêu lý do kích hoạt | SC-206 | |
+| V3-US4-11 | H, L | Khối có tối đa 4 mục; mỗi mục tối đa 3 lựa chọn kèm mặc định; Banner tính một mục | FR-220, FR-111 | |
+| V3-US4-12 | — | SC-207, đo khi dùng thật: người dùng chốt banner và format trong một câu trả lời ở ≥ 80% lần dùng thật | SC-207 | Cần người chạy |
+
 ## Truy vết FR và SC (T030)
 
 Trạng thái: **Đạt (chạy khô)** nghĩa là có nội dung trong file và có tiêu chí đạt trong bản chạy khô; **Một phần** nghĩa là còn phần cần môi trường thật; **Cần người chạy** nghĩa là chỉ kiểm được bằng người hoặc ảnh thật.
@@ -197,3 +260,37 @@ Trạng thái: **Đạt (chạy khô)** nghĩa là có tiêu chí v0.2 và bản
 | SC-106 | Hero có chữ qua 7 mục QC ở ít nhất 4/5 lần tạo | `docs/blind-test.md`; `text-in-image.md` | V2-US3-8 (văn bản) | Cần người chạy |
 | SC-107 | Số lần sửa prompt trung bình mỗi pack giảm so với v0.1 | — | Chưa có số đo | Cần người chạy |
 | SC-108 | Khối Chốt nhanh được "ok" nguyên khối ở ≥ 60% lần dùng thật | — | Chưa có số đo | Cần người chạy |
+
+## Truy vết v0.3 (T022)
+
+Đối chiếu FR-201…FR-220 và SC-201…SC-207 của `specs/003-hero-copy-space/spec.md` với file, mục và tiêu chí v0.3 ở trên. "Chạy khô" là worker tự đóng vai model đọc đúng file và chấm (`tests/runs/2026-11-19-v0.3/`); xem `docs/verification.md`.
+
+| FR/SC | Nội dung | File và mục | Tiêu chí v0.3 | Trạng thái |
+|---|---|---|---|---|
+| FR-201 | Bố cục banner: vị trí chủ thể và vùng chữ | `text-in-image.md` › Dựng vùng chữ | V3-US1-1 | Đạt (chạy khô: us1, kịch bản I) |
+| FR-202 | Đúng một cách tạo vùng (a, b, c), mô tả cụ thể | `text-in-image.md` › Dựng vùng chữ | V3-US1-2 | Đạt (chạy khô: us1, I) |
+| FR-203 | Model tự chọn cách theo cảnh | `text-in-image.md` › Cách chọn | V3-US1-7 | Đạt (chạy khô: us1, K) |
+| FR-204 | Tông vùng, ít chi tiết, không vật lấn, câu chặn chữ | `text-in-image.md` › Tông và màu chữ gợi ý | V3-US1-3, V3-US1-4 | Đạt (chạy khô: us1, I) |
+| FR-205 | Ngoại lệ bokeh có giới hạn | `anti-slop.md` mục 3 (ngoại lệ, QC) | V3-US1-8 | Đạt (chạy khô); mức bokeh trên ảnh thật: CHƯA KIỂM CHỨNG |
+| FR-206 | Prompt chế độ 2 đạt tiêu chí tự kiểm của 002 | `anti-slop.md` mục 2; ví dụ chế độ 2 | V3-US1-5, V3-US1-6 | Đạt (chạy khô: 74, 76, 76 từ) |
+| FR-207 | Khối Vùng chữ đủ trường dưới prompt | `text-in-image.md` › Mẫu khối Vùng chữ | V3-US2-1 | Đạt (chạy khô: us2) |
+| FR-208 | Cột Chữ ghi chế độ và vị trí | `text-in-image.md` › Mẫu khối Vùng chữ; `SKILL.md` mẫu Đầu ra | V3-US2-2 | Đạt (chạy khô: us2) |
+| FR-209 | Khi cắt khung: còn nguyên hay cần prompt khung dọc | `image-types.md` › Vùng chữ theo khung | V3-US2-3 | Đạt (chạy khô: us2) |
+| FR-210 | Mặc định chế độ 2 nói rõ "chừa vùng, ảnh cố ý không có chữ" | `SKILL.md` mẫu Chốt nhanh; `brief-card.md`; `example-pack.md` | V3-US2-4 | Đạt sau vòng sửa 1 (us4, H) |
+| FR-211 | Chế độ 3 và 4 giữ bố cục và vùng; lượt 1 chế độ 4 là prompt chế độ 2 | `text-in-image.md` › Quy tắc chế độ 3; › Chế độ 4 | V3-US3-1…5 | Đạt (chạy khô: us3, N) |
+| FR-212 | Tri thức: mục Dựng vùng chữ, ba cách, cách chọn, khung, mẫu khối; ví dụ chế độ 2 viết lại (cách a, b, khung dọc) | `text-in-image.md` › Ví dụ chế độ 2 | V3-US1-9, V3-US1-10 | Đạt (chạy khô) |
+| FR-213 | Tiêu chí hero chế độ 2 cho fixture 05 và cảnh đông (07) | `tests/acceptance.md` v0.3 US1, US2 | V3-US1-1…11; V3-US2-1 | Tiêu chí đã có; kết quả trên ảnh: Cần người chạy (SC-202) |
+| FR-214 | Phát hành 0.3.0, ghi thay đổi, metadata cập nhật | `plugin.json` ×2; `CHANGELOG.md` `[0.3.0]`; metadata | Manifest (T023) | Đạt (manifest `OK 0.3.0`, kiểm ở T023) |
+| FR-215 | Lượt đầu dừng khi và chỉ khi có trường hợp đặc biệt | `brief-card.md` › Khi nào dừng chờ; `SKILL.md` Lượt đầu | V3-US4-1, V3-US4-8 | Đạt (chạy khô: us4, H, L) |
+| FR-216 | Không có trường hợp, "đưa luôn" hoặc không có người: xuất ngay, "Đã dùng mặc định" có dòng hero | `brief-card.md` › Mẫu Đã dùng mặc định; `SKILL.md` Đầu ra | V3-US4-9 | Đạt (chạy khô: us4, M); dòng hero chỉ kiểm ở mẫu, chưa có ca hero xuất luôn |
+| FR-217 | Mỗi câu hỏi nêu lý do; số ảnh và độ dài không là lý do dừng | `brief-card.md` › Các mục; `SKILL.md` Lượt đầu | V3-US4-4, V3-US4-6 | Đạt (chạy khô: us4) |
+| FR-218 | Mục Banner 4 điểm, mỗi điểm một mặc định; không hỏi màu, kiểu chữ, CTA, logo | `brief-card.md` › Các mục; `SKILL.md` mẫu Chốt nhanh | V3-US4-2 | Đạt (chạy khô: us4, H) |
+| FR-219 | Format các ảnh khác chốt qua bảng; sửa theo số dòng | `SKILL.md` mẫu Đầu ra; `brief-card.md` › Quy tắc trình bày | V3-US4-5, V3-US4-7 | Đạt (chạy khô: us4, H và J) |
+| FR-220 | Tối đa 4 mục; Banner là một mục; mỗi trường hợp (2)–(4) một mục | `brief-card.md` › Các mục | V3-US4-11 | Đạt (chạy khô: us4) |
+| SC-201 | Mọi prompt chế độ 2 có vị trí chủ thể, vùng, cách, tông và khối Vùng chữ | `text-in-image.md`; `example-pack.md` | V3-US1-1…5; V3-US2-1 | Đạt (chạy khô: fixture 05 và 07) |
+| SC-202 | Ảnh thật: ≥ 4/5 đặt được tiêu đề ~40% không che chủ thể, đọc được ở 360 px | `docs/blind-test.md` › SC-202 | V3-US1-11 | Cần người chạy |
+| SC-203 | Người dùng không báo "hero thiếu chữ" khi đã đọc pack | — | — | CHƯA KIỂM CHỨNG |
+| SC-204 | Ảnh chế độ 0 không tăng dấu hiệu bokeh vô cớ so với v0.2.1 | `anti-slop.md` mục 3, mục 6 | V3-US1-8 | Chạy khô một phần; ảnh thật: CHƯA KIỂM CHỨNG |
+| SC-205 | Đổi sang chế độ 3 giữ vùng chữ trong 100% lần chạy thử khô | `text-in-image.md` › Quy tắc chế độ 3 | V3-US3-1 | Đạt (chạy khô: us3, N) |
+| SC-206 | Lượt đầu đúng ở intake có và không có trường hợp đặc biệt | `brief-card.md`; `SKILL.md` Lượt đầu | V3-US4-10 | Đạt (chạy khô: H, L dừng; M xuất luôn) |
+| SC-207 | Người dùng chốt banner và format trong một câu trả lời ở ≥ 80% lần dùng thật | — | V3-US4-12 | Cần người chạy |

@@ -1,4 +1,4 @@
-# Mức kiểm chứng: Image Prompt Pack (từ v0.1.0; dòng v0.2 ở dưới)
+# Mức kiểm chứng: Image Prompt Pack (từ v0.1.0; dòng v0.2 và v0.3 ở dưới)
 
 Mỗi dòng ghi một việc đã được kiểm đến mức nào, vào ngày nào, và bằng chứng là gì. Bốn mức (theo `specs/001-image-prompt-pack/research.md`):
 
@@ -48,6 +48,15 @@ Hai lưu ý về cách kiểm:
 | **v0.2** — Số lần sửa prompt trên mỗi pack giảm so với v0.1 (SC-107) | CHƯA KIỂM CHỨNG | | Cần đo trên cùng bài với công cụ thật |
 | **v0.2** — Tỉ lệ "ok" nguyên khối ≥ 60% (SC-108) | CHƯA KIỂM CHỨNG | | Cần đo khi dùng thật; dưới 60% thì xem lại mặc định |
 | **v0.2** — Rà skill theo Constitution II–IV và chuỗi cấm (T028) | ĐÃ CHẠY THẬT | 2026-11-18 | Xem bảng "Rà skill v0.2" cuối file |
+| **v0.3** — Manifest 0.3.0 (quickstart 001 §1) | ĐÃ CHẠY THẬT | 2026-11-19 | PowerShell từ thư mục gốc: `OK 0.3.0`; bốn file JSON đọc được; CHANGELOG có mục `[0.3.0]`. Chạy lại sau commit ở T023 |
+| **v0.3** — Chạy khô H–N (I, K, N; H, J, L, M) | ĐÃ CHẠY THẬT (chạy khô) | 2026-11-19 | `tests/runs/2026-11-19-v0.3/us1.md` đến `us4.md`: US1 10/10 đạt (1 mục cần người chạy); US2 7/7; US3 5/5; US4 11/11 (1 mục cần người chạy). Số vòng sửa: 1 (mục Banner-b thiếu "ảnh cố ý không có chữ"; quy tắc chế độ 3 chưa nói giữ dưới 80 từ). Cùng một worker vừa đóng vai model vừa viết skill, nên chỉ bắt được lỗi rõ |
+| **v0.3** — Số từ prompt chế độ 2 trong chạy khô | ĐÃ CHẠY THẬT (chạy khô) | 2026-11-19 | Đếm bằng PowerShell: hero 74, ảnh chia sẻ 76, hero cách (b) 76, hero chế độ 3 sau sửa 74 (bản nháp 94, trượt). Ví dụ trong `text-in-image.md`: 78 (chế độ 3), 64, 77, 67 (chế độ 2) |
+| **v0.3** — Hero có vùng chữ, 5 ảnh thật (SC-202) | CHƯA KIỂM CHỨNG | | Cần 5 ảnh thật; giao thức ở `docs/blind-test.md` |
+| **v0.3** — Dừng chờ theo trường hợp đặc biệt và "ok" trên Claude Code, Codex, ChatGPT (SC-206) | CHƯA KIỂM CHỨNG | | Chạy khô đã kiểm văn bản H, L, M. Chưa chạy trên harness thật; cần người chạy kịch bản H, J, L, M trên từng harness |
+| **v0.3** — Ảnh chế độ 0 không tăng bokeh vô cớ so với v0.2.1 (SC-204) | CHƯA KIỂM CHỨNG | | Chạy khô chỉ kiểm văn bản; cần so ảnh thật theo checklist QC |
+| **v0.3** — Người dùng không báo "hero thiếu chữ" (SC-203) | CHƯA KIỂM CHỨNG | | Cần lượt thử với người dùng thật |
+| **v0.3** — Chốt trong một câu trả lời ở ≥ 80% lần dùng thật (SC-207) | CHƯA KIỂM CHỨNG | | Đo khi dùng thật |
+| **v0.3** — Rà skill theo Constitution II–IV và chuỗi cấm (T022) | ĐÃ CHẠY THẬT | 2026-11-19 | Xem bảng "Rà skill v0.3" cuối file |
 
 ## Rà skill theo Constitution (T029): ĐÃ RÀ, 2026-11-18
 
@@ -119,3 +128,39 @@ Kiểm theo chuỗi, cấu trúc và mã hóa:
 | II. Đơn giản trước | Chỉ Markdown; không script, không build | Đạt |
 | III. Không viết procedure | Chốt nhanh và tự kiểm viết thành tiêu chí; không "Bước 1…"; mẫu đầu ra là hợp đồng, không phải quy trình | Đạt |
 | IV. Chạy trên nhiều harness | Không có tên harness trong skill; có đường lui khi không có người trả lời (xuất luôn, ghi mặc định ở đầu) | Đạt về cấu trúc. Hành vi dừng chờ trên Claude Code, Codex, ChatGPT: CHƯA KIỂM CHỨNG |
+
+## Rà skill v0.3 (T022): ĐÃ RÀ, 2026-11-19
+
+Số dòng đếm bằng PowerShell trên file hiện tại (phiên bản 0.3.0):
+
+| File | Số dòng | Giới hạn | Kết quả |
+|---|---|---|---|
+| `skills/prompt-pack/SKILL.md` | 144 | ≤ ~150 | Đạt |
+| `references/anti-slop.md` | 109 | ≤ ~300 | Đạt |
+| `references/brief-card.md` | 103 | ≤ ~300 | Đạt |
+| `references/text-in-image.md` | 137 | ≤ ~300 | Đạt |
+| `references/presets.md` | 77 | ≤ ~300 | Đạt (không đổi trong v0.3) |
+| `references/image-types.md` | 31 | ≤ ~300 | Đạt |
+| `references/example-pack.md` | 110 | ≤ ~300 | Đạt |
+
+Kiểm theo chuỗi, cấu trúc và mã hóa:
+
+| Mục kiểm | Kết quả |
+|---|---|
+| Thủ tục đánh số ("Bước n", "Step n") | Không có. Năm dòng đánh số ngoài khối mã là danh sách điều kiện (bốn trường hợp kích hoạt trong `brief-card.md`) và mẫu khối Chốt nhanh; không phải bước làm việc |
+| Tên harness, tên tool và biến đường dẫn (`${CLAUDE_PLUGIN_ROOT}`, `mcp__`, `WebFetch`, `Read(`, `Bash(`, Claude, Codex, ChatGPT) | Không có trong skill và references |
+| Tên công cụ tạo ảnh hoặc thiết kế (Midjourney, DALL·E, Gemini, Canva, Figma, Photoshop và tên tương tự) | Không có |
+| Chuỗi cấm trong khối prompt (`--ar`, `--no`, `::`, 8K, masterpiece, ultra-detailed, stunning, flawless, hyperrealistic, bokeh, f/) | Không có |
+| Thông số máy ảnh trong khối prompt mẫu | Đã bỏ "50mm lens look" ở ảnh 3 của Ví dụ A (`example-pack.md`). Còn lại trong `presets.md` (R03 "50mm", E04 "85mm", R10 "1/60s"): thuộc v0.1/v0.2, nằm ngoài danh sách file được sửa của v0.3 nên không đổi; ghi nhận để xử lý ở bản sau |
+| Từ cấm đứng một mình trong khối prompt mẫu (cozy, natural, realistic, ...) | Không có |
+| Prompt mẫu đạt tự kiểm (ghi số từ) | Ví dụ A: 75, 69, 55, 77, 67 từ. Ví dụ B: 77 từ (bản sửa). `text-in-image.md`: 78 (chế độ 3), 64, 77, 67 (chế độ 2) |
+| Tiếng Việt có dấu | Quét các từ không dấu phổ biến ngoài khối mã: không có kết quả |
+| Mã hóa và xuống dòng | UTF-8 không BOM, LF (kiểm bằng byte) cho các file skill |
+
+Đối chiếu Constitution (v0.3):
+
+| Nguyên tắc | Kiểm | Kết quả |
+|---|---|---|
+| II. Đơn giản trước | Chỉ Markdown; không script, không build | Đạt |
+| III. Không viết procedure | Chốt nhanh và tự kiểm viết thành tiêu chí; mẫu đầu ra là hợp đồng; không có "Bước n" | Đạt |
+| IV. Chạy trên nhiều harness | Không có tên harness trong skill; lượt đầu có đường lui "đưa luôn" hoặc không có người trả lời | Đạt về cấu trúc. Hành vi dừng trên Claude Code, Codex, ChatGPT: CHƯA KIỂM CHỨNG |

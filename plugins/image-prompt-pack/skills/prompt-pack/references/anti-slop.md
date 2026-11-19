@@ -70,6 +70,8 @@ Khung tư duy nội bộ, không hiển thị cho người dùng, gồm 7 khe: F
 | Không dấu vết sử dụng | Cảnh tĩnh, không ai đang dùng đồ | Một dấu vết cụ thể: cốc uống dở, việc đang làm dở, đồ bỏ dở |
 | Model tự thêm chữ hoặc vật | Prompt không nói vật nền nên model điền theo cảm hứng chủ đề: tuyết ngoài cửa, nến, bảng "Hot Cocoa" | Nêu cụ thể vật nền và câu chặn chữ: "plain unlabeled jars and boxes, no readable text anywhere" |
 
+**Ngoại lệ có giới hạn cho dòng "Bokeh nền mờ mọi cảnh" (FR-205):** chỉ ảnh chế độ chữ 2, 3 và 4 được làm mềm hậu cảnh, và chỉ ở phần hậu cảnh của vùng chữ, ở mức nhẹ: vật hậu cảnh vẫn nhận ra được, còn chủ thể và tiền cảnh giữ nét. Ảnh chế độ 0 và 1 vẫn dùng "deep focus, background in sharp detail". Cách dựng vùng chữ nằm ở `references/text-in-image.md`, mục "Dựng vùng chữ".
+
 Ghi chú: "bố cục quá sạch" là suy luận hợp lý nhưng chưa có số đo; coi là gợi ý, không phải quy tắc tuyệt đối. Bốn dòng cuối (đối xứng, thuần chủ đề, không dấu vết sử dụng, model tự thêm chữ hoặc vật) là suy luận từ một lượt test, chưa đo.
 
 ## 4. Đa dạng cấp pack (FR-107, FR-108)
@@ -98,7 +100,7 @@ Mục chung cho mọi ảnh:
 - [ ] Tay cầm vật đúng cấu trúc; đếm ngón khi phóng to.
 - [ ] Chữ đúng chính tả, không méo, không nổi trên vải.
 - [ ] Một nguồn sáng hợp lý; bóng đổ khớp nhau.
-- [ ] Nền không bokeh vô cớ; có vật đời thường.
+- [ ] Nền không bokeh vô cớ (trừ vùng chữ chế độ 2/3/4 theo ngoại lệ trên); có vật đời thường.
 - [ ] Màu không ngả cam-teal hoặc vàng theo mặc định.
 - [ ] Không lặp khuôn mặt đã dùng trong pack.
 

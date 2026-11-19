@@ -1,7 +1,7 @@
 {
   "name": "image-prompt-pack",
-  "version": "0.2.1",
-  "description": "Plans the images for any article, log or request and returns copy-ready, anti-slop image prompts: a quick brief card with defaults before long packs, per-image text-in-image modes, and self-checks against staged-looking shots. Does not generate images.",
+  "version": "0.3.0",
+  "description": "Plans the images for any article, log or request and returns copy-ready, anti-slop image prompts: a brief card only for special cases (text, style, special content, new format), a built-in copy space for hero and share images, per-image text-in-image modes, and self-checks against staged-looking shots. Does not generate images.",
   "author": {
     "name": "SEO Konic Team"
   },
@@ -19,7 +19,7 @@
   "interface": {
     "displayName": "Image Prompt Pack",
     "shortDescription": "Brief card, then copy-ready anti-slop image prompts",
-    "longDescription": "Đọc bài viết, log, lịch sử hội thoại hoặc một câu yêu cầu, rồi lập Kịch bản Media và Prompt Pack: mỗi ảnh một prompt tiếng Anh copy dùng ngay. Bài dài hoặc từ 4 ảnh trở lên sẽ có khối Chốt nhanh (hướng hình, chữ trong ảnh, mockup, số ảnh) để trả lời \"ok\" trước khi viết cả pack. Mỗi ảnh có chế độ chữ riêng (mặc định hero chừa vùng chèn tiêu đề sau), và prompt tự kiểm để tránh ảnh trông dàn dựng. Plugin không tạo ảnh; bạn dán prompt vào công cụ tạo ảnh đang dùng.",
+    "longDescription": "Đọc bài viết, log, lịch sử hội thoại hoặc một câu yêu cầu, rồi lập Kịch bản Media và Prompt Pack: mỗi ảnh một prompt tiếng Anh copy dùng ngay. Plugin chỉ dừng hỏi khi có trường hợp đặc biệt về chữ, phong cách, nội dung hoặc format mới lạ; khi đó khối Chốt nhanh nêu lý do và mặc định để trả lời \"ok\" trước khi viết cả pack. Hero và ảnh chia sẻ có vùng chữ dựng sẵn để chèn tiêu đề sau, kèm khối Vùng chữ cho biết vị trí và cách đặt chữ. Mỗi ảnh có chế độ chữ riêng, và prompt tự kiểm để tránh ảnh trông dàn dựng. Plugin không tạo ảnh; bạn dán prompt vào công cụ tạo ảnh đang dùng.",
     "developerName": "SEO Konic Team",
     "category": "Productivity",
     "capabilities": [
